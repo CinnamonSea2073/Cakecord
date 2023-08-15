@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}AI単語帳アプリMemevo | ログイン{% endblock %}
+
+{% block header %}ログイン{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+<p>ユーザーID, パスワードが一致しません．</p>
+{% endif %}
+<div class="create-form">
+    <form method="POST" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        <label>ユーザーID</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+        <label>パスワード</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+        <button type="submit">ログイン</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,316 @@
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+body li {
+    list-style: none
+}
+
+body ul {
+    padding-left: 0
+}
+
+body button {
+    border: 0px;
+}
+
+header {
+    background: #F8D106;
+    width: auto;
+    height: 100px;
+    margin: 0px;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width:479px) {
+    .main-container {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width:479px) {
+    header {
+        background: #F8D106;
+        width: auto;
+        height: 80px;
+        margin: 0px;
+        flex-shrink: 0;
+    }
+}
+
+header h1 {
+    color: #FFF;
+    text-align: left;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 90px;
+    margin-right: auto;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    width: auto;
+    height: 24px;
+    flex-shrink: 0;
+
+}
+
+header img {
+    border-radius: 14px;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    float: left;
+    box-shadow: 0 0 30px 0 rgba(150, 150, 150, 0.5);
+}
+
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.menu-btn span:before {
+    bottom: 8px;
+}
+
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked~.menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked~.menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 20rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -110%;
+    /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #f5a615;
+    transition: all 0.5s;
+    /*アニメーション設定*/
+    box-shadow: 0 0 30px 0 rgba(150, 150, 150, 0.5);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+
+}
+
+#menu-btn-check:checked~.menu-content {
+    right: 0;
+    /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+    padding: 30px 30px 0;
+}
+
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+footer {
+    margin-top: 200px;
+    background-color: rgb(64, 67, 107);
+    height: 100px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    display: none;
+}
+
+.footer-logo {
+    width: 200px;
+    float: left;
+    padding: 25px;
+}
+
+.footer-logo img {
+    width: 50px;
+    float: left;
+}
+
+.footer-logo h2 {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    text-align: right;
+}
+
+.menu-unlogin {
+    margin-right: 30px;
+    margin-left: auto;
+    margin-top: 70px;
+    width: 80%;
+    height: 40px;
+}
+
+.menu-unlogin-div {
+    margin: 0 0 0 auto;
+    width: 240px;
+    height: 80px;
+}
+
+.menu-unlogin button {
+    background-color: #f5a615;
+    border: solid;
+    border-width: 2px;
+    border-color: #FFF;
+    color: #ffffff;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.menu-unlogin button:hover {
+    background-color: #ffffff;
+    border: solid;
+    border-width: 2px;
+    border-color: #FFF;
+    color: #f5a615;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.menu-unlogin a {
+    height: 40px;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 0px;
+    float: left;
+}
+
+.menu-logined {
+    margin-right: 30px;
+    margin-left: auto;
+    margin-top: 70px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 80%;
+    height: 160px;
+    text-decoration: none;
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.menu-logined:hover {
+    background-color: #ffbc40;
+    margin-right: 30px;
+    margin-left: auto;
+    margin-top: 70px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 80%;
+    height: 160px;
+    text-decoration: none;
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px;
+}
+
+.menu-logined h2 {
+    color: #FFF;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    text-align: right;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.menu-logined h4 {
+    color: #ece8e3;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: right;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.menu-logined-div {
+    margin: 0 0 0 auto;
+    width: 240px;
+    height: 80px;
+}
+
+.menu-logined-icon {
+    display: block;
+    margin: 0 0 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, .5);
+    float: none;
+}

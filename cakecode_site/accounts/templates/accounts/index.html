@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}AI単語帳アプリMemevo | アカウント{% endblock %}
+
+{% block header %}アカウント{% endblock %}
+
+{% block content %}
+<h1 class="create-title">
+    ようこそ、<br>
+    未来の単語帳へ。
+</h1>
+<h3 class="create-text">
+    ※クローズドβ版です。<br>
+    バグがあれば至急連絡をお願い致します。
+</h3>
+
+{% if user.id %}
+<p>ログインしました．</p>
+<p>こんにちは，{{ user.username }}さん</p>
+<li><a href="{% url 'accounts:delete' user.pk %}">退会</a></li>
+<a href="{% url 'accounts:logout' %}">ログアウトする</a>
+{% else %}
+<ul class="list-ul">
+    <li>
+        <a href="{% url 'accounts:login' %}">
+            <button class="list-object" onclick="">
+                <h3>
+                    ログイン
+                </h3>
+                <p>
+                    すでにお持ちのアカウントでログインします。
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path d="M4.95837 1.41669L12.0417 8.50002L4.95837 15.5834" stroke="#169CB9" stroke-width="2" />
+                </svg>
+            </button>
+        </a>
+    </li>
+    <li class="list-li">
+        <a href="{% url 'accounts:create' %}">
+            <button class="list-object" onclick="">
+                <h3>
+                    新規登録
+                </h3>
+                <p>
+                    アカウントを新しく登録してログインします。
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path d="M4.95837 1.41669L12.0417 8.50002L4.95837 15.5834" stroke="#169CB9" stroke-width="2" />
+                </svg>
+            </button>
+        </a>
+    </li>
+</ul>
+
+{% endif %}
+{% endblock %}

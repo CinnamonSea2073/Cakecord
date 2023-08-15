@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}AI単語帳アプリMemevo | アカウント作成{% endblock %}
+
+{% block header %}アカウント作成{% endblock %}
+
+{% block content %}
+<div class="create-form">
+    <form method="POST" action="{% url 'accounts:create' %}">
+        {% csrf_token %}
+        <label>ユーザーID</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+        <label>メールアドレス</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+        <label>パスワード</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+        <label>パスワード(確認)</label>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+        <button type="submit">登録</button>
+    </form>
+    <a href="/accounts/">
+        <button type="return">戻る</button>
+    </a>
+</div>
+
+{% endblock %}
